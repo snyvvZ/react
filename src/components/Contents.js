@@ -2,12 +2,23 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledContents = styled.section`
-  width: 1280px;
+  grid-area: contents;
+  width: 1040px;
   margin: 0 auto;
+  ${({ theme }) => theme.defaultPadding};
 `;
 
-const Contents = ({ children }) => {
-  return <StyledContents>{children}</StyledContents>;
+const StyledTitle = styled.h1`
+  font-size: 28px;
+`;
+
+const Contents = ({ children, title }) => {
+  return (
+    <StyledContents>
+      <StyledTitle>{title}</StyledTitle>
+      {children}
+    </StyledContents>
+  );
 };
 
 export default Contents;
