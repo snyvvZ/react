@@ -14,9 +14,9 @@ const StyledWrapper = styled.main`
     "footer footer footer";
 `;
 
-const ThemeContext = React.createContext();
-
 const App = ({ title }) => {
+  const ThemeContext = React.createContext(); // FIXME Context 안됨
+
   return (
     <>
       <GlobalStyle />
