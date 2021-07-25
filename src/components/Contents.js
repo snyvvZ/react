@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 const StyledContents = styled.section`
   grid-area: contents;
-  width: 1040px;
+  width: 1000px;
+  padding: 20px;
   margin: 0 auto;
   ${({ theme }) => theme.defaultPadding};
 `;
