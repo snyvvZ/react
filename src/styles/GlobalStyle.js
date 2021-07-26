@@ -1,97 +1,95 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+  header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+    display: block;
+  }
 
+  html, body, h1, h2, h3, h4, h5, h6, ol, ul, div, li, dl, dt, dd, form, iframe, p, a, span, blockquote, i, figure, fieldset, img, table, th, td, input, textarea, select, caption, button, pre, small {
+    margin: 0;
+    padding: 0;
+  }
 
-header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
-  display: block;
-}
+  html, body {
+    height: 100%;
+  }
 
-html, body, h1, h2, h3, h4, h5, h6, ol, ul, div, li, dl, dt, dd, form, iframe, p, a, span, blockquote, i, figure, fieldset, img, table, th, td, input, textarea, select, caption, button, pre, small {
-  margin: 0;
-  padding: 0;
-}
+  body {
+    font-family: '-apple-system', 'HelveticaNeue', "Roboto", "Noto Sans KR", "helvetica", "Gulim", sans-serif;
+    font-size: 20px;
+    color: #000;
+    line-height: 1.8;
+  }
 
-html, body {
-  height: 100%;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+  }
 
-body {
-  font-family: '-apple-system', 'HelveticaNeue', "Roboto", "Noto Sans KR", "helvetica", "Gulim", sans-serif;
-  font-size: 20px;
-	color: #000;
-	line-height: 1.8;
-}
+  ol, ul {
+    list-style: none;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-	font-size: inherit;
-}
+  fieldset {
+    border: 0 solid transparent;
+  }
 
-ol, ul {
-  list-style: none;
-}
+  img {
+    border: none;
+    line-height: 0;
+    vertical-align: top;
+  }
 
-fieldset {
-  border: 0 solid transparent;
-}
+  table {
+    border-collapse: collapse;
+  }
 
-img {
-  border: none;
-  line-height: 0;
-  vertical-align: top;
-}
+  table, th, td {
+    border-spacing: 0;
+  }
 
-table {
-  border-collapse: collapse;
-}
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    color: #000;
+    vertical-align: middle;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+  }
 
-table, th, td {
-  border-spacing: 0;
-}
+  caption {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+  }
 
-input,
-textarea,
-select {
-  font-family: inherit;
-  color: #000;
-  vertical-align: middle;
-  border: 0;
-  border-radius: 0;
-  outline: none;
-}
+  button {
+    appearance: none;
+    font-family: inherit;
+    font-size: inherit;
+    border: 0;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    line-height: 1.5;
+  }
 
-caption {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-}
+  button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 
-button {
-  appearance: none;
-  font-family: inherit;
-  font-size: inherit;
-  border: 0;
-  cursor: pointer;
-  background: none;
-	outline: none;
-  line-height: 1.5;
-}
+  em {
+    font-style: normal;
+  }
 
-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-em {
-  font-style: normal;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 export default GlobalStyle;

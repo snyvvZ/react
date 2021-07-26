@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledHeader = styled.header`
   grid-area: header;
-  background-color: black;
+  background-color: ${({ theme }) => theme.primaryColor};
   ${({ theme }) => theme.defaultPadding};
 `;
 
@@ -16,7 +16,7 @@ const StyledTitle = styled.h1`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledTitle>snyvv</StyledTitle>
+      <StyledTitle>MUSINSA</StyledTitle>
     </StyledHeader>
   );
 };
