@@ -35,8 +35,6 @@ const StyledCount = styled.form`
   }
 `;
 
-const ThemeContext = React.createContext();
-
 const App = ({ title }) => {
   const [count, setCount] = useState(1);
   const [toggle, setToggle] = useState(true);
