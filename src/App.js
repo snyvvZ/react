@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { musinsaTheme, wusinsaTheme, mensinsaTheme } from "./styles/theme";
-import GlobalStyle from "./styles/GlobalStyle";
 import Header from "./components/Header";
 import Contents from "./components/Contents";
 import Footer from "./components/Footer";
@@ -45,10 +44,12 @@ const App = () => {
             : mensinsaTheme
         }
       >
-        <GlobalStyle />
         <StyledWrapper className="container">
           <Header>snyvv</Header>
-          <Contents>{genderButton}</Contents>
+          <Contents>
+            Contents Area
+            <div>{genderButton}</div>
+          </Contents>
           <Footer />
         </StyledWrapper>
       </ThemeProvider>
