@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import theme from "./global/theme";
 import GlobalStyle from "./global/GlobalStyle";
 import Header from "./components/Header";
@@ -35,7 +35,7 @@ const StyledCount = styled.form`
   }
 `;
 
-const ThemeContext = React.createContext(); // FIXME Context 안됨
+const ThemeContext = React.createContext();
 
 const App = ({ title }) => {
   const [count, setCount] = useState(1);
@@ -60,8 +60,8 @@ const App = ({ title }) => {
 
   return (
     <>
-      <GlobalStyle />
-      <ThemeContext.Provider value={theme}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <StyledWrapper className="container">
           <Header>snyvv</Header>
           <Contents title={title}>
@@ -77,7 +77,7 @@ const App = ({ title }) => {
           </Contents>
           <Footer />
         </StyledWrapper>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </>
   );
 };
