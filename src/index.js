@@ -2,11 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="//static.msscdn.net/ui/build/pc/css/common.css?20210721103000"
-/>;
 
 ReactDOM.render(
   <React.StrictMode>
