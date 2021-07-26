@@ -4,26 +4,23 @@ import mixins from "./mixins";
 export const musinsaTheme = {
   ...variables,
   ...mixins,
-  backgroundColor: "#fff",
-  fontColor: "#000",
-  accentColor: "#0078FF",
-  primaryColor: "#000",
+
+  accentColor: variables.blue700,
+  primaryColor: variables.black,
 };
 
 export const wusinsaTheme = {
   ...variables,
   ...mixins,
-  backgroundColor: "#000",
-  fontColor: "#fff",
-  accentColor: "#685bba",
-  primaryColor: "#a5a9b9",
+
+  accentColor: variables.wusinsaAccent,
+  primaryColor: variables.wusinsaGray500,
 };
 
 export const mensinsaTheme = {
   ...variables,
   ...mixins,
-  backgroundColor: "#000",
-  fontColor: "#fff",
-  accentColor: "#0078FF",
-  primaryColor: "#1A294A",
+
+  accentColor: variables.blue700,
+  primaryColor: variables.mensinsaPrimary,
 };
