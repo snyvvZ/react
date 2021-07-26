@@ -6,6 +6,8 @@ import Contents from "./components/Contents";
 import Footer from "./components/Footer";
 
 const StyledWrapper = styled.section`
+  ${({ theme }) => theme.resetSection};
+
   display: grid;
   grid-template-areas:
     "header header header"

@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
+  ${({ theme }) => theme.resetFont};
+
   grid-area: footer;
   padding: 20px;
   margin-top: auto;

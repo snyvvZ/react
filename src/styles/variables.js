@@ -1,4 +1,12 @@
 export const variables = {
+  // ANCHOR fonts
+  fontDefault: `Gulim, 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', sans-serif`,
+  fontMusinsa: `'Musinsa', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', sans-serif`,
+  fontMusinsaStencil: `'Musinsa Stencil', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', sans-serif`,
+  fontMusinsaItalic: `'Musinsa Italic', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', sans-serif`,
+  fontMusinsaRound: `'Musinsa Round', 'Apple SD Gothic Neo', 'Roboto', 'Noto Sans KR', sans-serif`,
+
+  // ANCHOR colos
   black: "#000000",
   white: "#ffffff",
 
