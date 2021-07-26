@@ -14,12 +14,25 @@ const StyledWrapper = styled.section`
     "footer footer footer";
 `;
 
+const StyledButton = styled.button`
+  padding: 8px 12px;
+  border: 1px solid ${({ theme }) => theme.accentColor};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.accentColor};
+  & + & {
+    margin-left: 12px;
+  }
+`;
+
 const App = () => {
   const [themeMode, setThemeMode] = useState("musinsa");
+  const gender = ["musinsa", "wusinsa", "mensinsa"];
 
-  const changeTheme = () => {
-    console.log(themeMode);
-  };
+  const genderButton = gender.map((text) => (
+    <StyledButton onClick={() => setThemeMode(text)}>
+      {text === "wusinsa" ? "여성" : text === "mensinsa" ? "남성" : "전체"}
+    </StyledButton>
+  ));
 
   return (
     <>
@@ -35,17 +48,7 @@ const App = () => {
         <GlobalStyle />
         <StyledWrapper className="container">
           <Header>snyvv</Header>
-          <Contents>
-            <button type="button" onClick={changeTheme}>
-              전체
-            </button>
-            <button type="button" onClick={changeTheme}>
-              여성
-            </button>
-            <button type="button" onClick={changeTheme}>
-              남성
-            </button>
-          </Contents>
+          <Contents>{genderButton}</Contents>
           <Footer />
         </StyledWrapper>
       </ThemeProvider>

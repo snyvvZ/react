@@ -24,6 +24,6 @@ export const mensinsaTheme = {
   ...mixins,
   backgroundColor: "#000",
   fontColor: "#fff",
-  accentColor: "#685bba",
+  accentColor: "#0078FF",
   primaryColor: "#1A294A",
 };
