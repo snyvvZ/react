@@ -1,11 +1,11 @@
 import { css } from "styled-components";
 
-const height = css`
-  height: 20px;
+const defaultPadding = css`
+  padding: 15px 20px;
 `;
 
 const mixins = {
-  height,
+  defaultPadding,
 };
 
 export default mixins;

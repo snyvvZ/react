@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import theme from "./global/theme";
+import theme, { light, dark } from "./global/theme";
 import GlobalStyle from "./global/GlobalStyle";
 import Header from "./components/Header";
 import Contents from "./components/Contents";
@@ -12,6 +12,7 @@ const StyledWrapper = styled.main`
     "header header header"
     ". contents ."
     "footer footer footer";
+  ${({ theme }) => theme.backgroundColor};
 `;
 
 const StyledCount = styled.form`
@@ -36,8 +37,13 @@ const StyledCount = styled.form`
 `;
 
 const App = ({ title }) => {
+  const [theme, setThemeMode] = useState("light"); // 테마 모드 세팅
+  setThemeMode((theme) => (theme === "light" ? dark : light)); // 테마 환경에 맞는 테마 컬러 가져오기
+
   const [count, setCount] = useState(1);
   const [toggle, setToggle] = useState(true);
+
+  const toggleTheme = () => setThemeMode(theme === "light" ? "dark" : "light"); // 테마 변경하기 이벤트
 
   const countIncrease = (e) => {
     e.preventDefault();
@@ -63,6 +69,10 @@ const App = ({ title }) => {
         <StyledWrapper className="container">
           <Header>snyvv</Header>
           <Contents title={title}>
+            <button type="button" onClick={toggleTheme}>
+              테마 변경
+            </button>
+
             <StyledCount>
               <button onClick={countDecrease}>Count</button>
               <input type="number" value={count} />

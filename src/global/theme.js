@@ -1,13 +1,19 @@
-import { css } from "styled-components";
+import variables from "./variables";
 import mixins from "./mixins";
 
-const defaultPadding = css`
-  padding: 15px 20px;
-`;
+export const light = {
+  titleColor: "#b8b8b8",
+  bgColor: "#121212",
+};
+
+export const dark = {
+  titleColor: "#121212",
+  bgColor: "#b8b8b8",
+};
 
 const theme = {
+  ...variables,
   ...mixins,
-  defaultPadding,
 };
 
 export default theme;

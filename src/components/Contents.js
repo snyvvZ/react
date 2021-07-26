@@ -11,6 +11,7 @@ const StyledContents = styled.section`
 
 const StyledTitle = styled.h1`
   font-size: 28px;
+  color: ${({ theme }) => theme.colorRed};
 `;
 
 const Contents = ({ children, title }) => {
