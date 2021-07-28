@@ -9,12 +9,6 @@ import Footer from "./components/Footer";
 
 const StyledWrapper = styled.section`
   ${mixins.resetSection};
-
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    ". contents ."
-    "footer footer footer";
 `;
 
 const StyledButton = styled.button`
