@@ -1,26 +1,19 @@
 import variables from "./variables";
-import mixins from "./mixins";
 
 export const musinsaTheme = {
-  ...variables,
-  ...mixins,
-
   accentColor: variables.blue700,
   primaryColor: variables.black,
+  // Theme Styles ...
 };
 
 export const wusinsaTheme = {
-  ...variables,
-  ...mixins,
-
   accentColor: variables.wusinsaAccent,
   primaryColor: variables.wusinsaGray500,
+  // Theme Styles ...
 };
 
 export const mensinsaTheme = {
-  ...variables,
-  ...mixins,
-
   accentColor: variables.blue700,
   primaryColor: variables.mensinsaPrimary,
+  // Theme Styles ...
 };
