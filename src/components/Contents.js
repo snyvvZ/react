@@ -4,6 +4,8 @@ import mixins from "../styles/mixins";
 
 const StyledContents = styled.main`
   ${mixins.resetSection}
+
+  min-height: 80vh; // FIXME 임시 스타일
   padding: 50px 20px;
 `;
 

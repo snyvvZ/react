@@ -15,11 +15,15 @@ const StyledHeader = styled.header`
 		"logo search util"
 		"gnb gnb link";
   align-items: center;
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
   padding: 20px;
   background-color: ${({ theme }) => theme.primaryColor};
 `;
 
-const StyledTitle = styled.h1`
+const StyledLogo = styled.h1`
   grid-area: logo;
   font-size: 40px;
   color: white;
@@ -29,7 +33,8 @@ const StyledTitle = styled.h1`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledTitle>TITLE</StyledTitle>
+      <StyledLogo>TITLE</StyledLogo>
+
       <Search />
       <GNB />
       <Util />
