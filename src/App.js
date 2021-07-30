@@ -44,7 +44,7 @@ const App = () => {
         }
       >
         <StyledWrapper className="container">
-          <Header>snyvv</Header>
+          <Header>MUSINSA</Header>
           <Contents>
             Contents Area
             <div>{genderButton}</div>
