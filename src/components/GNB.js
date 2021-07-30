@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import variables from "../styles/variables";
 import mixins from "../styles/mixins";
 
-const StyledGNB = styled.nav`
-    display: flex;
-    padding-right: 20px;
-    margin-left: auto;
+const StyledGnb = styled.nav`
+  display: flex;
+  grid-area: gnb;
 
   > h2 {
     ${mixins.blind};
@@ -15,7 +14,7 @@ const StyledGNB = styled.nav`
 
 const StyledAnchor = styled.a`
   display: flex;
-  aligns-item: center;
+  align-items: center;
   justify-content: center;
   padding: 10px;
   color: ${variables.white};
@@ -79,13 +78,13 @@ const menusItem = menus.map((items) => {
     </StyledAnchor>;
 });
 
-const GNB = () => {
-    return(<>
-        <StyledGNB>
-          <h2>Navigation Menus</h2>
-          {menusItem}
-        </StyledGNB>
-    </>)
+const Gnb = () => {
+  return(<>
+    <StyledGnb>
+      <h2>Navigation Menus</h2>
+      {menusItem}
+    </StyledGnb>
+  </>)
 }
 
-export default GNB;
+export default Gnb;
