@@ -23,9 +23,25 @@ const StyledAnchor = styled.a`
   & + & {
       margin-left: 10px;
   }
+
+  &.campaign-menu {
+      color: ${({theme}) => theme.accentColor};
+  }
 `;
 
 const menus = [
+  {
+    key: 6,
+    name: 'campaign1',
+    link: '#anchor',
+    campaign: true,
+  },
+  {
+    key: 7,
+    name: 'campaign2',
+    link: '#anchor',
+    campaign: true,
+  },
   {
     key: 1,
     name: 'menu1',
@@ -57,6 +73,7 @@ const menusItem = menus.map((items) => {
     return <StyledAnchor 
         href={items.link} 
         key={items.key}
+        className={items.campaign && 'campaign-menu'}
     >
         {items.name}
     </StyledAnchor>;
