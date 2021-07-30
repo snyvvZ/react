@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import variables from "../styles/variables";
 import mixins from "../styles/mixins";
+import GNB from './GNB';
 
 const StyledHeader = styled.header`
   ${mixins.resetFont};
 
+  display: flex;
+  align-items: center;
   background-color: ${({ theme }) => theme.primaryColor};
 `;
 
@@ -20,6 +23,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledTitle>TITLE</StyledTitle>
+      <GNB />
     </StyledHeader>
   );
 };

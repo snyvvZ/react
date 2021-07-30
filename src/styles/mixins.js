@@ -9,9 +9,18 @@ const resetFont = css`
     sans-serif;
 `;
 
+const blind = css`
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  position: absolute;
+`;
+
 const mixins = {
   resetSection,
   resetFont,
+  blind,
 };
 
 export default mixins;
