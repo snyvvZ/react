@@ -4,7 +4,7 @@ import variables from '../styles/variables';
 
 const StyledForm = styled.form`
   display: flex;
-  grid-area: search;
+  margin-left: 40px;
   background-color: ${variables.white};
 `;
 

@@ -4,7 +4,7 @@ import variables from '../styles/variables';
 
 const StyledLink = styled.div`
   display: flex;
-  grid-area: link;
+  margin-left: auto;
   background-color: ${variables.white};
 `;
 

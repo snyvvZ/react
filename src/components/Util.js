@@ -5,7 +5,6 @@ import variables from '../styles/variables';
 const StyledUril = styled.div`
   display: flex;
   align-items: center;
-  grid-area: util;
   margin-left: auto;
 `;
 

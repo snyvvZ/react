@@ -10,35 +10,64 @@ import Link from './Link';
 const StyledHeader = styled.header`
   ${mixins.resetFont};
 
-  display: grid;
-  grid-template-areas:
-		"logo search util"
-		"gnb gnb link";
-  align-items: center;
+  overflow: hidden;
+`;
+
+const StyledSticky = styled.div`
+  ${mixins.contentWidth};
+  ${mixins.backgroundHeader};
+
+  display: flex;
+  align-items: center; 
+  position: -webkit-sticky; /* 사파리 브라우저 지원 */
   position: sticky;
   left: 0;
   right: 0;
   top: 0;
   padding: 20px;
-  background-color: ${({ theme }) => theme.primaryColor};
+  background-color: ${({theme}) => theme.primaryColor};
+  z-index: 510;
 `;
 
 const StyledLogo = styled.h1`
-  grid-area: logo;
-  font-size: 40px;
-  color: white;
-  font-family: ${variables.fontMusinsa};
+  a {
+    font-size: 40px;
+    color: white;
+    font-family: ${variables.fontMusinsa};
+  }
+`;
+
+const StyledAnchor = styled.div`
+  ${mixins.contentWidth};
+  ${mixins.backgroundHeader};
+
+  display: flex;
+  align-items: center;
+  position: -webkit-sticky; /* 사파리 브라우저 지원 */
+  position: sticky;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 10px 20px 20px 20px;
+  background-color: ${({theme}) => theme.primaryColor};
+  z-index: 500;
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledLogo>TITLE</StyledLogo>
+      <StyledSticky>
+        <StyledLogo>
+          <a href="/">TITLE</a>
+        </StyledLogo>
+        <Search />
+        <Util />
+      </StyledSticky>
 
-      <Search />
-      <GNB />
-      <Util />
-      <Link />
+      <StyledAnchor>
+        <GNB />
+        <Link />
+      </StyledAnchor>
     </StyledHeader>
   );
 };
