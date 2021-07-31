@@ -1,5 +1,4 @@
 import { css } from "styled-components";
-import theme from './theme';
 
 const resetSection = css`
   padding: 0;
