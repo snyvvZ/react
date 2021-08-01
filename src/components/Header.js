@@ -43,9 +43,14 @@ const StyledAnchor = styled.div`
   ${mixins.contentWidth};
   ${mixins.backgroundHeader};
 
-  ${({sticky}) => sticky > 88 && css`
-    transform: translateY(-100%);
-  `};
+  ${({sticky}) => sticky < 88 
+    ? css`
+      transform: translateY(-${({sticky}) => sticky}px);
+    `
+    : css`
+      transform: translateY(-100%);
+    `
+  };
 
   display: flex;
   align-items: center;
@@ -55,7 +60,6 @@ const StyledAnchor = styled.div`
   top: 88px;
   padding: 13px 20px 20px 20px;
   background-color: ${({theme}) => theme.primaryColor};
-  transition: transform .15s;
   z-index: 500;
 `;
 
