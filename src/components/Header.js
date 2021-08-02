@@ -11,7 +11,6 @@ import { useScroll } from '../hooks/useScroll';
 const StyledHeader = styled.header`
   ${mixins.resetFont};
 
-  height: 160px;
   overflow: hidden;
   position: relative;
 `;
@@ -43,14 +42,25 @@ const StyledAnchor = styled.div`
   ${mixins.contentWidth};
   ${mixins.backgroundHeader};
 
+  /* TODO 합치기
   ${({sticky}) => sticky < 88 
     ? css`
-      transform: translateY(-${({sticky}) => sticky}px);
+      transform: translateY(-${sticky}px);
     `
     : css`
       transform: translateY(-100%);
     `
   };
+
+  ${({sticky, direction}) => sticky > 160 && direction === 'up'
+    ? css`
+      transform: translateY(0);
+    `
+    : css`
+      transform: translateY(-100%);
+    `
+  };
+  */
 
   display: flex;
   align-items: center;
@@ -60,11 +70,12 @@ const StyledAnchor = styled.div`
   top: 88px;
   padding: 13px 20px 20px 20px;
   background-color: ${({theme}) => theme.primaryColor};
+  transition: transform .15s;
   z-index: 500;
 `;
 
 const Header = () => {
-  const { scrollY } = useScroll();
+  const { scrollY, scrollDirection } = useScroll();
 
   return (
     <StyledHeader>
@@ -76,7 +87,7 @@ const Header = () => {
         <Util />
       </StyledSticky>
 
-      <StyledAnchor sticky={scrollY}>
+      <StyledAnchor sticky={scrollY} direction={scrollDirection}>
         <GNB />
         <Link />
       </StyledAnchor>

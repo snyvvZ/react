@@ -1,24 +1,29 @@
-import { useState, useEffect } from 'react';
-import debounce from 'lodash/debounce';
+import { useState, useEffect } from "react";
 
 export function useScroll() {
-  const [scrollY, setScrollY] = useState(0);
-  // const [scrollDirection, setScrollDirection] = useState();
-  // let lastScrollTop = 0;
-  const delay = 5;
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [bodyOffset, setBodyOffset] = useState(
+    document.body.getBoundingClientRect()
+  );
+  const [scrollY, setScrollY] = useState(bodyOffset.top);
+  const [scrollDirection, setScrollDirection] = useState();
 
-  const listener = () => {
-    setScrollY(window.pageYOffset);
-    // setScrollDirection(scrollY > lastScrollTop ? setScrollDirection('down') : setScrollDirection('up'));
-    // lastScrollTop = scrollY;
+  const listener = e => {
+    setBodyOffset(document.body.getBoundingClientRect());
+    setScrollY(-bodyOffset.top);
+    setScrollDirection(lastScrollTop > -bodyOffset.top ? "down" : "up");
+    setLastScrollTop(-bodyOffset.top);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', debounce(listener, delay));
-    return () => window.removeEventListener('scroll', listener);
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
   });
 
   return {
-    scrollY
+    scrollY,
+    scrollDirection
   };
 }
