@@ -42,25 +42,16 @@ const StyledAnchor = styled.div`
   ${mixins.contentWidth};
   ${mixins.backgroundHeader};
 
-  /* TODO 합치기
-  ${({sticky}) => sticky < 88 
+  ${({sticky, direction}) => 
+    sticky < 88 && direction === 'up'
     ? css`
       transform: translateY(-${sticky}px);
-    `
-    : css`
+    ` : direction === 'up' ? css`
       transform: translateY(-100%);
+    ` : css`
+      transform: tarnslateY(0);
     `
   };
-
-  ${({sticky, direction}) => sticky > 160 && direction === 'up'
-    ? css`
-      transform: translateY(0);
-    `
-    : css`
-      transform: translateY(-100%);
-    `
-  };
-  */
 
   display: flex;
   align-items: center;
@@ -70,7 +61,7 @@ const StyledAnchor = styled.div`
   top: 88px;
   padding: 13px 20px 20px 20px;
   background-color: ${({theme}) => theme.primaryColor};
-  transition: transform .15s;
+  transition: transform .25s;
   z-index: 500;
 `;
 
