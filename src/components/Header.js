@@ -11,6 +11,7 @@ import { useScroll } from '../hooks/useScroll';
 const StyledHeader = styled.header`
   ${mixins.resetFont};
 
+  height: 160px;
   overflow: hidden;
   position: relative;
 `;
@@ -55,7 +56,7 @@ const StyledAnchor = styled.div`
 
   display: flex;
   align-items: center;
-  position:fixed;
+  position: fixed;
   left: 0;
   right: 0;
   top: 88px;
