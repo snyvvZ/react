@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import GlobalStyle from './styles/GlobalStyle';
 import variables from "./styles/variables";
 import mixins from "./styles/mixins";
-import { musinsaTheme, wusinsaTheme, mensinsaTheme } from "./styles/theme";
+import ThemeProvider from 'ThemeProvider';
 import Header from "./components/Header";
 import Contents from "./components/Contents";
 import Footer from "./components/Footer";
@@ -24,26 +24,9 @@ const StyledButton = styled.button`
 `;
 
 const App = () => {
-  const [themeMode, setThemeMode] = useState("musinsa");
-  const gender = ["musinsa", "wusinsa", "mensinsa"];
-
-  const genderButton = gender.map((text) => (
-    <StyledButton onClick={() => setThemeMode(text)}>
-      {text === "wusinsa" ? "여성" : text === "mensinsa" ? "남성" : "전체"}
-    </StyledButton>
-  ));
-
   return (
     <>
-      <ThemeProvider
-        theme={
-          themeMode === "musinsa"
-            ? musinsaTheme
-            : themeMode === "wusinsa"
-            ? wusinsaTheme
-            : mensinsaTheme
-        }
-      >
+      <ThemeProvider>
         <GlobalStyle />
         <StyledWrapper className="container">
           <Header />
